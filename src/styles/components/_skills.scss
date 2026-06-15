@@ -1,0 +1,47 @@
+@use "../abstracts/variables" as *;
+
+.skills-grid {
+  display: grid;
+  gap: 2.5rem;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.skill-group {
+  padding: 2.25rem;
+  background-color: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: 0.75rem;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.skill-group__title {
+  font-size: 1.0625rem;
+  color: $color-text;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+  margin-top: 1.5rem;
+}
+
+.skill-chip {
+  padding: 0.4375rem 0.875rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: $color-text-muted;
+  background-color: transparent;
+  border: 1px solid $color-border;
+  border-radius: 999px;
+}

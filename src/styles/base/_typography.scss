@@ -6,11 +6,15 @@ body {
   line-height: $line-height-base;
   color: $color-text;
   background-color: $color-bg;
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease;
 }
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   line-height: 1.2;
   font-weight: 600;
 }

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Professional portfolio showcasing full-stack projects including a Restaurant Menu System and Learning Management System."
+      content="Mahmoud Zakaria — Full-stack developer building MERN applications with a focus on clean code and strong fundamentals."
     />
     <title>Portfolio — Mahmoud Zakaria</title>
 
@@ -26,10 +26,47 @@
         <nav class="site-nav" aria-label="Primary">
           <ul class="site-nav__list">
             <li><a class="site-nav__link" href="#identity">About</a></li>
+            <li><a class="site-nav__link" href="#skills">Skills</a></li>
             <li><a class="site-nav__link" href="#projects">Projects</a></li>
             <li><a class="site-nav__link" href="#contact">Contact</a></li>
           </ul>
         </nav>
+
+        <button
+          type="button"
+          class="theme-toggle"
+          id="theme-toggle"
+          aria-label="Switch to dark mode"
+          aria-pressed="false"
+        >
+          <svg
+            class="theme-toggle__icon theme-toggle__icon--sun"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+          </svg>
+          <svg
+            class="theme-toggle__icon theme-toggle__icon--moon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        </button>
       </div>
     </header>
 
@@ -41,20 +78,83 @@
         aria-labelledby="identity-heading"
       >
         <div class="container">
-          <p class="eyebrow">Full-Stack Developer</p>
+          <div class="hero">
+            <div class="hero__content">
+              <p class="eyebrow">Full-Stack Developer</p>
 
-          <h1 id="identity-heading" class="hero__title">
-            Building thoughtful digital experiences with clean architecture.
-          </h1>
+              <h1 id="identity-heading" class="hero__title">
+                Hi, I&rsquo;m Mahmoud.
+              </h1>
 
-          <p class="hero__lead">
-            I design and engineer scalable web systems — from multi-interface
-            restaurant platforms to data-driven learning environments.
-          </p>
+              <p class="hero__lead">
+                I build robust MERN stack applications — like my Restaurant Menu
+                System and Learning Management System — with a focus on clean
+                code, readable interfaces, and strong fundamentals.
+              </p>
 
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="#projects">View Projects</a>
-            <a class="btn btn--ghost" href="#contact">Get in Touch</a>
+              <div class="hero__actions">
+                <a class="btn btn--primary" href="#projects">View Projects</a>
+                <a class="btn btn--ghost" href="#contact">Get in Touch</a>
+              </div>
+            </div>
+
+            <div class="hero__media">
+              <div class="hero__avatar" role="img" aria-label="Profile picture placeholder">
+                <span class="hero__avatar-initials" aria-hidden="true">MZ</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technical Skills -->
+      <section
+        id="skills"
+        class="section section--skills"
+        aria-labelledby="skills-heading"
+      >
+        <div class="container">
+          <header class="section__header">
+            <p class="eyebrow">What I Work With</p>
+            <h2 id="skills-heading" class="section__title">Technical Skills</h2>
+          </header>
+
+          <div class="skills-grid">
+            <article class="skill-group" aria-labelledby="skill-frontend-title">
+              <h3 id="skill-frontend-title" class="skill-group__title">
+                Frontend
+              </h3>
+              <ul class="skill-list" aria-label="Frontend technologies">
+                <li class="skill-chip">JavaScript (ES6+)</li>
+                <li class="skill-chip">TypeScript</li>
+                <li class="skill-chip">Semantic HTML5</li>
+                <li class="skill-chip">Modular SASS/SCSS</li>
+                <li class="skill-chip">DOM Manipulation</li>
+                <li class="skill-chip">Clean UI/UX Design</li>
+              </ul>
+            </article>
+
+            <article class="skill-group" aria-labelledby="skill-backend-title">
+              <h3 id="skill-backend-title" class="skill-group__title">
+                Backend &amp; Database
+              </h3>
+              <ul class="skill-list" aria-label="Backend and database technologies">
+                <li class="skill-chip">Node.js</li>
+                <li class="skill-chip">Express.js</li>
+                <li class="skill-chip">MongoDB (Atlas)</li>
+              </ul>
+            </article>
+
+            <article class="skill-group" aria-labelledby="skill-principles-title">
+              <h3 id="skill-principles-title" class="skill-group__title">
+                Software Engineering
+              </h3>
+              <ul class="skill-list" aria-label="Software engineering principles">
+                <li class="skill-chip">Object-Oriented Programming (OOP)</li>
+                <li class="skill-chip">Data Structures &amp; Algorithms</li>
+                <li class="skill-chip">Clean Architecture</li>
+              </ul>
+            </article>
           </div>
         </div>
       </section>
@@ -69,20 +169,15 @@
           <header class="section__header">
             <p class="eyebrow">Selected Work</p>
             <h2 id="projects-heading" class="section__title">Core Projects</h2>
-            <p class="section__subtitle">
-              Two flagship systems that demonstrate interface design, domain
-              modeling, and full-stack engineering.
-            </p>
           </header>
 
           <div class="project-grid">
-            <!-- Restaurant Menu System -->
             <article
               class="project-card"
               aria-labelledby="project-restaurant-title"
             >
               <div class="project-card__meta">
-                <span class="project-card__tag">Full-Stack</span>
+                <span class="project-card__tag">MERN Stack</span>
                 <span class="project-card__tag">Multi-Interface</span>
               </div>
 
@@ -91,15 +186,15 @@
               </h3>
 
               <p class="project-card__description">
-                A unified menu management platform with distinct role-based
-                interfaces for customers, staff, and administrators — designed
-                for clarity under real service conditions.
+                A full-stack MERN app with separate interfaces for owners,
+                customers, and order management — each role gets what they need
+                without clutter.
               </p>
 
-              <ul class="project-card__features" aria-label="Key capabilities">
-                <li>Customer-facing menu browsing and ordering flow</li>
-                <li>Staff dashboard for order and table management</li>
-                <li>Admin console for menu, pricing, and inventory control</li>
+              <ul class="project-card__features" aria-label="Restaurant system highlights">
+                <li>Owner dashboard for menus and pricing</li>
+                <li>Customer view for browsing and ordering</li>
+                <li>Order management for staff</li>
               </ul>
 
               <footer class="project-card__footer">
@@ -110,11 +205,13 @@
               </footer>
             </article>
 
-            <!-- Learning Management System -->
-            <article class="project-card" aria-labelledby="project-lms-title">
+            <article
+              class="project-card"
+              aria-labelledby="project-lms-title"
+            >
               <div class="project-card__meta">
-                <span class="project-card__tag">Full-Stack</span>
-                <span class="project-card__tag">Database Architecture</span>
+                <span class="project-card__tag">MERN Stack</span>
+                <span class="project-card__tag">Database Design</span>
               </div>
 
               <h3 id="project-lms-title" class="project-card__title">
@@ -122,15 +219,15 @@
               </h3>
 
               <p class="project-card__description">
-                An LMS built around structured course delivery and robust
-                student data management — supporting enrollment, progress
-                tracking, and scalable content organization.
+                An LMS built for teaching environments — managing students,
+                instructors, courses, and content with a clear MongoDB data
+                structure.
               </p>
 
-              <ul class="project-card__features" aria-label="Key capabilities">
-                <li>Course catalog with modular lesson structure</li>
-                <li>Student profiles, enrollment, and progress analytics</li>
-                <li>Relational database design for courses and assessments</li>
+              <ul class="project-card__features" aria-label="LMS highlights">
+                <li>Course and lesson organization</li>
+                <li>Student enrollment and progress</li>
+                <li>Instructor content management</li>
               </ul>
 
               <footer class="project-card__footer">
@@ -154,11 +251,11 @@
           <header class="section__header section__header--centered">
             <p class="eyebrow">Contact</p>
             <h2 id="contact-heading" class="section__title">
-              Let&rsquo;s build something meaningful.
+              Let&rsquo;s connect.
             </h2>
             <p class="section__subtitle">
-              Open to collaborations, freelance work, and full-time
-              opportunities.
+              Open to junior and mid-level roles, freelance work, and
+              collaborations.
             </p>
           </header>
 

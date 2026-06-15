@@ -1,12 +1,21 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
+.site-nav {
+  justify-self: end;
+}
+
 .site-nav__list {
   display: flex;
-  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem 2.5rem;
 }
 
 .site-nav__link {
+  display: inline-block;
+  padding: 0.5rem 0;
   font-size: 0.9375rem;
   color: $color-text-muted;
   transition: color 0.2s ease;
@@ -18,5 +27,25 @@
 
   &:focus-visible {
     @include focus-ring;
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .site-nav {
+    justify-self: start;
+  }
+
+  .site-nav__list {
+    gap: 0.5rem 1.75rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  .site-nav__list {
+    gap: 0.5rem 1.25rem;
+  }
+
+  .site-nav__link {
+    font-size: 0.875rem;
   }
 }

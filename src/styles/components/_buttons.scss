@@ -10,7 +10,10 @@
   font-weight: 500;
   border-radius: 0.375rem;
   border: 1px solid transparent;
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
 
   &:focus-visible {
     @include focus-ring;
@@ -18,17 +21,18 @@
 }
 
 .btn--primary {
-  background-color: $color-text;
-  color: $color-surface;
+  background-color: $color-primary;
+  color: $color-primary-text;
 
   &:hover {
-    background-color: #333;
+    background-color: $color-primary-hover;
   }
 }
 
 .btn--ghost {
   border-color: $color-border;
   background-color: transparent;
+  color: $color-text;
 
   &:hover {
     border-color: $color-text;

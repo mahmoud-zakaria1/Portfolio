@@ -1,12 +1,4 @@
-// Design tokens — expand as the visual system evolves
-
-// Colors
-$color-bg: #fafafa;
-$color-surface: #ffffff;
-$color-text: #111111;
-$color-text-muted: #5a5a5a;
-$color-accent: #2563eb;
-$color-border: #e5e5e5;
+// Design tokens — static values and theme palettes
 
 // Typography
 $font-family-base: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -15,9 +7,57 @@ $line-height-base: 1.6;
 
 // Layout
 $container-max-width: 72rem;
-$container-padding: 1.5rem;
-$section-spacing: 6rem;
+$container-padding: 2rem;
+$section-spacing: 8rem;
 
 // Breakpoints
 $breakpoint-md: 48rem;
 $breakpoint-lg: 64rem;
+
+// Theme palettes — consumed by abstracts/_themes.scss as CSS custom properties
+$theme-light: (
+  "bg": #fafafa,
+  "surface": #ffffff,
+  "surface-elevated": #ffffff,
+  "text": #111111,
+  "text-muted": #5a5a5a,
+  "accent": #2563eb,
+  "accent-subtle": #eff6ff,
+  "border": #e5e5e5,
+  "header": rgba(255, 255, 255, 0.92),
+  "primary": #111111,
+  "primary-hover": #333333,
+  "primary-text": #ffffff,
+  "shadow": rgba(17, 17, 17, 0.06),
+);
+
+$theme-dark: (
+  "bg": #0a0a0a,
+  "surface": #141414,
+  "surface-elevated": #1c1c1c,
+  "text": #f5f5f5,
+  "text-muted": #a3a3a3,
+  "accent": #60a5fa,
+  "accent-subtle": #172554,
+  "border": #2a2a2a,
+  "header": rgba(20, 20, 20, 0.92),
+  "primary": #f5f5f5,
+  "primary-hover": #d4d4d4,
+  "primary-text": #0a0a0a,
+  "shadow": rgba(0, 0, 0, 0.35),
+);
+
+// Semantic aliases — map to CSS variables for runtime theme switching
+$color-bg: var(--color-bg);
+$color-surface: var(--color-surface);
+$color-surface-elevated: var(--color-surface-elevated);
+$color-text: var(--color-text);
+$color-text-muted: var(--color-text-muted);
+$color-accent: var(--color-accent);
+$color-accent-subtle: var(--color-accent-subtle);
+$color-border: var(--color-border);
+$color-header: var(--color-header);
+$color-primary: var(--color-primary);
+$color-primary-hover: var(--color-primary-hover);
+$color-primary-text: var(--color-primary-text);
+$color-shadow: var(--color-shadow);
