@@ -1,0 +1,4 @@
+node_modules/
+dist/styles/main.css
+dist/styles/main.css.map
+dist/scripts/main.js

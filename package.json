@@ -1,0 +1,19 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal professional portfolio — TypeScript + modular SCSS",
+  "scripts": {
+    "build:css": "sass src/styles/main.scss dist/styles/main.css --style=expanded",
+    "build:js": "tsc",
+    "build": "npm run build:css && npm run build:js",
+    "watch:css": "sass --watch src/styles/main.scss:dist/styles/main.css --style=expanded",
+    "watch:js": "tsc --watch",
+    "dev": "concurrently \"npm run watch:css\" \"npm run watch:js\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "sass": "^1.85.1",
+    "typescript": "^5.8.2"
+  }
+}
