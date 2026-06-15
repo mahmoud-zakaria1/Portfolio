@@ -1,0 +1,57 @@
+@use "../abstracts/variables" as *;
+
+.section {
+  padding-block: $section-spacing;
+}
+
+.section__header {
+  margin-bottom: 3rem;
+  max-width: 40rem;
+}
+
+.section__header--centered {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.section__title {
+  margin-top: 0.5rem;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+.section__subtitle {
+  margin-top: 1rem;
+}
+
+.eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $color-accent;
+}
+
+.hero__title {
+  margin-top: 1rem;
+  max-width: 20ch;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+}
+
+.hero__lead {
+  margin-top: 1.5rem;
+  max-width: 52ch;
+  font-size: 1.125rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.contact-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}

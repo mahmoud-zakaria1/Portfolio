@@ -1,0 +1,22 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.site-nav__list {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.site-nav__link {
+  font-size: 0.9375rem;
+  color: $color-text-muted;
+  transition: color 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    color: $color-text;
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}

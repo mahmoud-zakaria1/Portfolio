@@ -1,0 +1,25 @@
+// ==========================================================================
+// Portfolio — Main Stylesheet Entry
+// Import order: abstracts → base → layout → components
+// ==========================================================================
+
+// Abstracts
+@use "abstracts/variables";
+@use "abstracts/functions";
+@use "abstracts/mixins";
+
+// Base
+@use "base/reset";
+@use "base/typography";
+@use "base/utilities";
+
+// Layout
+@use "layout/grid";
+@use "layout/header";
+@use "layout/footer";
+@use "layout/sections";
+
+// Components
+@use "components/buttons";
+@use "components/navigation";
+@use "components/cards";
