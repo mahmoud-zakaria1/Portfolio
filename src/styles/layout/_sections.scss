@@ -1,17 +1,17 @@
 @use "../abstracts/variables" as *;
 
 .section {
-  padding-block: calc($section-spacing * 1.5); // زودنا مسافة السكاشن العادية 50%
+  padding-block: calc($section-spacing * 1.5);
 }
 
 .section--hero {
-  padding-block: calc($section-spacing * 1.2) calc($section-spacing * 1.5); // تباعد متناسق للهيرو
+  padding-block: calc($section-spacing * 1.2) calc($section-spacing * 1.5);
 }
 
 .section--skills {
   background-color: $color-surface-elevated;
   transition: background-color 0.25s ease;
-  margin-block: 2rem; // إضافة مسافة أمان إضافية بره السكشن
+  margin-block: 2rem;
 }
 
 .section__header {
@@ -45,11 +45,11 @@
 .hero {
   display: grid;
   align-items: center;
-  gap: 5rem; // زيادة المسافة العمودية على الشاشات الصغيرة
+  gap: 5rem;
 
   @media (min-width: $breakpoint-md) {
     grid-template-columns: 1fr 1fr;
-    gap: 8rem; // زيادة المسافة الأفقية على الشاشات الكبيرة عشان تدي فخامة
+    gap: 8rem;
   }
 }
 
@@ -96,9 +96,8 @@
   background-color: $color-surface;
   border: 1px solid $color-border;
   border-radius: 50%;
-  margin: 1.5rem; // مسافة أمان بره الدايرة عشان الـ Shadow وهو بيتسع ميتكتمش
+  margin: 1.5rem;
 
-  // تشغيل أنيميشن الشادو اللي طلبته
   animation: pulse-shadow 3s infinite ease-in-out;
 
   transition:
@@ -112,7 +111,7 @@
   }
 
   50% {
-    box-shadow: 0 0 25px 8px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 0 25px 8px var(--avatar-shadow); 
   }
 
   100% {

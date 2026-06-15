@@ -7,6 +7,13 @@
   <meta name="description"
     content="Mahmoud Zakaria — Full-stack developer building MERN applications with a focus on clean code and strong fundamentals." />
   <title>Portfolio — Mahmoud Zakaria</title>
+  <!-- Load the theme from localStorage -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
 
   <!-- Compiled from modular SCSS: src/styles/main.scss -->
   <link rel="stylesheet" href="dist/styles/main.css">

@@ -9,10 +9,12 @@
 :root,
 [data-theme="light"] {
   color-scheme: light;
+  --avatar-shadow: rgba(0, 0, 0, 0.06); 
   @include emit-theme($theme-light);
 }
 
 [data-theme="dark"] {
   color-scheme: dark;
+  --avatar-shadow: rgba(99, 102, 241, 0.15); 
   @include emit-theme($theme-dark);
 }
