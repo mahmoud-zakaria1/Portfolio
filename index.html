@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Professional portfolio showcasing full-stack projects including a Restaurant Menu System and Learning Management System."
+    />
+    <title>Portfolio — Mahmoud Zakaria</title>
+
+    <!-- Compiled from modular SCSS: src/styles/main.scss -->
+    <link rel="stylesheet" href="dist/styles/main.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header" role="banner">
+      <div class="container site-header__inner">
+        <a class="site-logo" href="#" aria-label="Home">
+          <span class="site-logo__mark" aria-hidden="true">MZ</span>
+          <span class="site-logo__text">Mahmoud Zakaria</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <ul class="site-nav__list">
+            <li><a class="site-nav__link" href="#identity">About</a></li>
+            <li><a class="site-nav__link" href="#projects">Projects</a></li>
+            <li><a class="site-nav__link" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Identity -->
+      <section
+        id="identity"
+        class="section section--hero"
+        aria-labelledby="identity-heading"
+      >
+        <div class="container">
+          <p class="eyebrow">Full-Stack Developer</p>
+
+          <h1 id="identity-heading" class="hero__title">
+            Building thoughtful digital experiences with clean architecture.
+          </h1>
+
+          <p class="hero__lead">
+            I design and engineer scalable web systems — from multi-interface
+            restaurant platforms to data-driven learning environments.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#projects">View Projects</a>
+            <a class="btn btn--ghost" href="#contact">Get in Touch</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Projects -->
+      <section
+        id="projects"
+        class="section section--projects"
+        aria-labelledby="projects-heading"
+      >
+        <div class="container">
+          <header class="section__header">
+            <p class="eyebrow">Selected Work</p>
+            <h2 id="projects-heading" class="section__title">Core Projects</h2>
+            <p class="section__subtitle">
+              Two flagship systems that demonstrate interface design, domain
+              modeling, and full-stack engineering.
+            </p>
+          </header>
+
+          <div class="project-grid">
+            <!-- Restaurant Menu System -->
+            <article
+              class="project-card"
+              aria-labelledby="project-restaurant-title"
+            >
+              <div class="project-card__meta">
+                <span class="project-card__tag">Full-Stack</span>
+                <span class="project-card__tag">Multi-Interface</span>
+              </div>
+
+              <h3 id="project-restaurant-title" class="project-card__title">
+                Restaurant Menu System
+              </h3>
+
+              <p class="project-card__description">
+                A unified menu management platform with distinct role-based
+                interfaces for customers, staff, and administrators — designed
+                for clarity under real service conditions.
+              </p>
+
+              <ul class="project-card__features" aria-label="Key capabilities">
+                <li>Customer-facing menu browsing and ordering flow</li>
+                <li>Staff dashboard for order and table management</li>
+                <li>Admin console for menu, pricing, and inventory control</li>
+              </ul>
+
+              <footer class="project-card__footer">
+                <a class="project-card__link" href="#" aria-disabled="true">
+                  Case Study
+                  <span class="visually-hidden"> — Restaurant Menu System</span>
+                </a>
+              </footer>
+            </article>
+
+            <!-- Learning Management System -->
+            <article class="project-card" aria-labelledby="project-lms-title">
+              <div class="project-card__meta">
+                <span class="project-card__tag">Full-Stack</span>
+                <span class="project-card__tag">Database Architecture</span>
+              </div>
+
+              <h3 id="project-lms-title" class="project-card__title">
+                Learning Management System
+              </h3>
+
+              <p class="project-card__description">
+                An LMS built around structured course delivery and robust
+                student data management — supporting enrollment, progress
+                tracking, and scalable content organization.
+              </p>
+
+              <ul class="project-card__features" aria-label="Key capabilities">
+                <li>Course catalog with modular lesson structure</li>
+                <li>Student profiles, enrollment, and progress analytics</li>
+                <li>Relational database design for courses and assessments</li>
+              </ul>
+
+              <footer class="project-card__footer">
+                <a class="project-card__link" href="#" aria-disabled="true">
+                  Case Study
+                  <span class="visually-hidden"> — Learning Management System</span>
+                </a>
+              </footer>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section
+        id="contact"
+        class="section section--contact"
+        aria-labelledby="contact-heading"
+      >
+        <div class="container">
+          <header class="section__header section__header--centered">
+            <p class="eyebrow">Contact</p>
+            <h2 id="contact-heading" class="section__title">
+              Let&rsquo;s build something meaningful.
+            </h2>
+            <p class="section__subtitle">
+              Open to collaborations, freelance work, and full-time
+              opportunities.
+            </p>
+          </header>
+
+          <div class="contact-actions">
+            <a class="btn btn--primary" href="mailto:mz2862001@gmail.com">
+              Send Email
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container site-footer__inner">
+        <p class="site-footer__copy">
+          &copy; <span id="year"></span> Mahmoud Zakaria. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Compiled from TypeScript: src/scripts/main.ts -->
+    <script src="dist/scripts/main.js" type="module" defer></script>
+  </body>
+</html>
