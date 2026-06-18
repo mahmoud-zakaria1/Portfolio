@@ -4,13 +4,66 @@
   border-top: 1px solid $color-border;
   padding-block: 3rem;
   margin-top: 2rem;
-}
 
-.site-footer__inner {
-  text-align: center;
-}
+  &__inner {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem; // Vertical spacing between text and icons on mobile layout
 
-.site-footer__copy {
-  font-size: 0.875rem;
-  color: $color-text-muted;
+    // Switch to row alignment on desktop viewports for cleaner distribution
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__copy {
+    font-size: 0.875rem;
+    color: $color-text-muted;
+  }
+
+  // --- Added Social Links Styles ---
+
+  // Flex container holding the brand links
+  &__socials {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; // Seamless horizontal distribution between icons
+  }
+
+  // Base style for social links (Monochrome styling for minimalist integrity)
+  &__link {
+    font-size: 1.4rem;
+    color: $color-text-muted; // Using your existing variable for uniform gray
+    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s ease;
+    display: inline-block;
+
+    // Smooth subtle lift animation on pointer hover for premium UX feel
+    &:hover {
+      transform: translateY(-3px);
+    }
+
+    // LinkedIn Official Brand Identity Color Accent
+    &--linkedin:hover {
+      color: #0077b5;
+    }
+
+    // Gmail / Google Official Brand Identity Color Accent
+    &--gmail:hover {
+      color: #ea4335;
+    }
+
+    // GitHub Adaptive Brand Accent to match the Global Active Theme State
+    &--github:hover {
+      color: #24292e; // Dark charcoal fallback for standard light theme context
+      
+      // Dynamically transitions link to pure white when the HTML dark mode token is applied
+      html[data-theme="dark"] & {
+        color: #ffffff;
+      }
+    }
+  }
 }

@@ -17,6 +17,7 @@
 
   <!-- Compiled from modular SCSS: src/styles/main.scss -->
   <link rel="stylesheet" href="dist/styles/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -245,57 +246,81 @@
     <!-- Contact -->
     <section class="contact-section" id="contact">
       <div class="container">
-          
-          <span class="section-tag">CONTACT</span>
-          <h2 class="section-title">Let’s connect.</h2>
-          <p class="section-subtitle">
-              As an aspiring Junior Full-stack Developer, I am open to Full-time roles, freelance work, and remote collaborations.
-          </p>
-          
-          <button id="open-form-btn" class="btn-main">Send Email</button>
+
+        <span class="section-tag">CONTACT</span>
+        <h2 class="section-title">Let’s connect.</h2>
+        <p class="section-subtitle">
+          As an aspiring Junior Full-stack Developer, I am open to Full-time roles, freelance work, and remote
+          collaborations.
+        </p>
+
+        <button id="open-form-btn" class="btn-main">Send Email</button>
       </div>
-  
+
       <div id="contact-modal" class="modal-overlay hidden">
-          <div class="modal-card">
-              <button id="close-form-btn" class="btn-close">&times;</button>
-              <h3 class="modal-title">Send a Message</h3>
-              
-              <form id="contact-form" novalidate>
-                  <div class="form-group">
-                      <label for="name">Name</label>
-                      <input type="text" id="name" name="name" placeholder="Your Name" required>
-                      <span class="error-message" id="name-error"></span>
-                  </div>
-  
-                  <div class="form-group">
-                      <label for="email">Email</label>
-                      <input type="email" id="email" name="email" placeholder="Your Email" required>
-                      <span class="error-message" id="email-error"></span>
-                  </div>
-  
-                  <div class="form-group">
-                      <label for="message">Message</label>
-                      <textarea id="message" name="message" rows="4" placeholder="Your Message..." required></textarea>
-                      <span class="error-message" id="message-error"></span>
-                  </div>
-  
-                  <button type="submit" id="submit-btn" class="btn-submit">
-                      <span class="btn-text">Submit</span>
-                      <span class="spinner hidden"></span>
-                  </button>
-                  
-                  <div id="form-status" class="form-status hidden"></div>
-              </form>
-          </div>
+        <div class="modal-card">
+          <button id="close-form-btn" class="btn-close">&times;</button>
+          <h3 class="modal-title">Send a Message</h3>
+
+          <form id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your Name" required>
+              <span class="error-message" id="name-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="Your Email" required>
+              <span class="error-message" id="email-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Your Message..." required></textarea>
+              <span class="error-message" id="message-error"></span>
+            </div>
+
+            <button type="submit" id="submit-btn" class="btn-submit">
+              <span class="btn-text">Submit</span>
+              <span class="spinner hidden"></span>
+            </button>
+
+            <div id="form-status" class="form-status hidden"></div>
+          </form>
+        </div>
       </div>
-  </section>
+    </section>
   </main>
 
+  <!-- Main Application Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container site-footer__inner">
+      <!-- Copyright text display with dynamic year binding -->
       <p class="site-footer__copy">
         &copy; <span id="year"></span> Mahmoud Zakaria. All rights reserved.
       </p>
+
+      <!-- Social connect links wrapper utilizing BEM methodology -->
+      <div class="site-footer__socials">
+        <!-- 1. GitHub: Replace 'MahmoudZakaria' with your actual GitHub username -->
+        <a href="https://github.com/mz2862001-ux
+      " target="_blank" rel="noopener noreferrer" class="site-footer__link site-footer__link--github"
+          aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+
+        <!-- 2. LinkedIn: Replace the URL with your exact LinkedIn profile link -->
+        <a href="https://www.linkedin.com/in/mahmoud-zakaria-2644982ab/" target="_blank" rel="noopener noreferrer"
+          class="site-footer__link site-footer__link--linkedin" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+
+        <!-- 3. Gmail: This is already perfectly configured to open an email draft to you -->
+        <a href="mailto:mahmoudzakaria@gmail.com" class="site-footer__link site-footer__link--gmail" aria-label="Email">
+          <i class="fa-brands fa-google"></i>
+        </a>
+      </div>
     </div>
   </footer>
 
