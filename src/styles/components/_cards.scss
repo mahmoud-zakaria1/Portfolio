@@ -1,5 +1,10 @@
 @use "../abstracts/variables" as *;
 
+/**
+ * Project Cards Component
+ * Handles the structural grid elements and premium micro-interactions for portfolio items.
+ */
+
 .project-card {
   display: flex;
   flex-direction: column;
@@ -7,9 +12,27 @@
   background-color: $color-surface;
   border: 1px solid $color-border;
   border-radius: 0.75rem;
-  transition:
-    background-color 0.25s ease,
-    border-color 0.25s ease;
+  
+  /* 🚀 ADVANCED INTERACTION CONFIGURATION */
+  /* Added transform and box-shadow with a fluid cubic-bezier for a premium tactile feel */
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+              border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+              box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  /* Hover and focus states for superior desktop UX */
+  &:hover {
+    transform: translateY(-6px); /* Smooth vertical lift execution */
+    border-color: rgba($color-accent, 0.3); /* Subtle border tinting on active selection */
+    
+    /* Elegant soft shadow glow for standard viewport contexts */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    
+    /* Dynamic adaptive subtle blue glow tailored specifically for the Dark Mode aesthetic */
+    html[data-theme="dark"] & {
+      box-shadow: 0 12px 28px rgba($color-accent, 0.06);
+    }
+  }
 }
 
 .project-card__meta {
@@ -25,12 +48,27 @@
   color: $color-text-muted;
   border: 1px solid $color-border;
   border-radius: 999px;
+  
+  /* Smooth transition for tag highlight during interactions */
+  transition: border-color 0.25s ease, color 0.25s ease;
+
+  /* Subtle highlight on parent card hover for immersive visual feedback */
+  .project-card:hover & {
+    border-color: rgba($color-accent, 0.2);
+    color: $color-text;
+  }
 }
 
 .project-card__title {
   margin-top: 1.5rem;
   font-size: 1.25rem;
   color: $color-text;
+  transition: color 0.25s ease;
+
+  /* Accent focus on title when the card is hovered */
+  .project-card:hover & {
+    color: $color-accent;
+  }
 }
 
 .project-card__description {
@@ -56,6 +94,23 @@
   font-size: 0.9375rem;
   font-weight: 500;
   color: $color-accent;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  
+  /* Smooth horizontal translation transition for potential icon elements inside the anchor */
+  transition: color 0.25s ease, transform 0.25s ease;
+
+  /* Micro-interaction for the call-to-action link on card hover */
+  .project-card:hover & {
+    text-decoration: underline;
+    
+    // If you include a FontAwesome arrow icon inside your link, it will slide slightly forward
+    i, svg {
+      transform: translateX(3px);
+      transition: transform 0.2s ease;
+    }
+  }
 
   &[aria-disabled="true"] {
     pointer-events: none;

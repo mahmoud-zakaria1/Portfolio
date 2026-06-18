@@ -1,46 +1,79 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+/* ==========================================================================
+   Modern CSS Reset with Smooth Theme-Switching Transitions
+   ========================================================================== */
 
-* {
-  margin: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  min-height: 100vh;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-}
-
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-}
-
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-ul,
-ol {
-  list-style: none;
-  padding: 0;
-}
+   *,
+   *::before,
+   *::after {
+     box-sizing: border-box;
+   }
+   
+   * {
+     margin: 0;
+   }
+   
+   html {
+     scroll-behavior: smooth;
+   }
+   
+   body {
+     min-height: 100vh;
+     line-height: 1.5;
+     -webkit-font-smoothing: antialiased;
+     
+     /* 🌓 SMOOTH THEME SWITCHING ANIMATION */
+     /* Applies a fluid, non-blocking transition to layout backgrounds and text colors */
+     transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                 color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+   }
+   
+   /* Ensure common semantic blocks adapt smoothly during theme toggle */
+   header,
+   footer,
+   section,
+   main,
+   aside {
+     transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                 border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+   }
+   
+   img,
+   picture,
+   video,
+   canvas,
+   svg {
+     display: block;
+     max-width: 100%;
+   }
+   
+   input,
+   button,
+   textarea,
+   select {
+     font: inherit;
+     
+     /* Smoothly switches interactive elements border/background states */
+     transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                 color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                 border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+   }
+   
+   a {
+     color: inherit;
+     text-decoration: none;
+     
+     /* Animates custom anchor link color changes dynamically */
+     transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+   }
+   
+   ul,
+   ol {
+     list-style: none;
+     padding: 0;
+   }
+   
+   /* 🚀 PERFORMANCE OPTIMIZATION FOR ANIMATIONS */
+   /* Prevents unexpected layout shifts or transition snapping during initial page boot */
+   .no-transition {
+     transition: none !important;
+   }

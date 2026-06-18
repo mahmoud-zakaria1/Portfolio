@@ -1,14 +1,22 @@
 @use "../abstracts/variables" as *;
 
+/**
+ * Technical Skills Component
+ * Clean dynamic grid layouts handling responsive breakpoints with premium micro-interactions.
+ * Animation added: Smooth visual depth transitions on hover for groups and chips.
+ */
+
 .skills-grid {
   display: grid;
   gap: 2.5rem;
 
+  /* Tablet view and above: switches to a balanced 2-column structure */
   @media (min-width: $breakpoint-md) {
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
   }
 
+  /* Desktop view and above: expands into a full 3-column architecture */
   @media (min-width: $breakpoint-lg) {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -16,17 +24,25 @@
 
 .skill-group {
   padding: 2.25rem;
-  background-color: $color-surface;
-  border: 1px solid $color-border;
+  background-color: var(--color-surface); /* Connected to live dynamic theme token */
+  border: 1px solid var(--color-border);
   border-radius: 0.75rem;
-  transition:
-    background-color 0.25s ease,
-    border-color 0.25s ease;
+  
+  /* Upgraded layout animation transitions for smooth depth scaling */
+  transition: background-color 0.3s ease,
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+
+  /* Premium interaction: adds subtle ambient shadow and depth without visual layout shift */
+  &:hover {
+    border-color: rgba(99, 102, 241, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  }
 }
 
 .skill-group__title {
   font-size: 1.0625rem;
-  color: $color-text;
+  color: var(--color-text);
 }
 
 .skill-list {
@@ -34,14 +50,28 @@
   flex-wrap: wrap;
   gap: 0.625rem;
   margin-top: 1.5rem;
+  list-style: none; /* Safely strips default bullet matrices */
+  padding: 0;
 }
 
 .skill-chip {
   padding: 0.4375rem 0.875rem;
   font-size: 0.8125rem;
   font-weight: 500;
-  color: $color-text-muted;
+  color: var(--color-text-muted);
   background-color: transparent;
-  border: 1px solid $color-border;
-  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px; /* Absolute pill shape framing */
+  
+  /* Smooth animation timing for a reactive interface feeling */
+  transition: border-color 0.25s ease, 
+              color 0.25s ease, 
+              background-color 0.25s ease;
+
+  /* Interactive state animation: highlights the chip boundary and tints the background layer */
+  &:hover {
+    color: var(--color-text);
+    border-color: var(--color-accent); /* Injects the main primary accent tone */
+    background-color: rgba(99, 102, 241, 0.04); /* Ultra-soft background overlay tint */
+  }
 }

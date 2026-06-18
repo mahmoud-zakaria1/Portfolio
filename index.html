@@ -4,10 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="Mahmoud Zakaria — Full-stack developer building MERN applications with a focus on clean code and strong fundamentals." />
+  <meta name="description" content="Mahmoud Zakaria — Full-stack developer building MERN applications with a focus on clean code and strong fundamentals." />
   <title>Portfolio — Mahmoud Zakaria</title>
-  <!-- Load the theme from localStorage -->
+
   <script>
     (function () {
       const savedTheme = localStorage.getItem('theme') || 'light';
@@ -15,8 +14,8 @@
     })();
   </script>
 
-  <!-- Compiled from modular SCSS: src/styles/main.scss -->
   <link rel="stylesheet" href="dist/styles/main.css">
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
@@ -39,42 +38,24 @@
         </ul>
       </nav>
 
-      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode"
-        aria-pressed="false">
-        <svg class="theme-toggle__icon theme-toggle__icon--sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-          fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
-          aria-hidden="true">
-          <circle cx="12" cy="12" r="4" />
-          <path
-            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
-        </svg>
-        <svg class="theme-toggle__icon theme-toggle__icon--moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-          fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
-          aria-hidden="true">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-        </svg>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <i class="fa-solid fa-sun theme-toggle__icon theme-toggle__icon--sun"></i>
+        <i class="fa-solid fa-moon theme-toggle__icon theme-toggle__icon--moon"></i>
       </button>
     </div>
   </header>
 
   <main id="main">
-    <!-- Identity -->
+    
     <section id="identity" class="section section--hero" aria-labelledby="identity-heading">
       <div class="container">
         <div class="hero">
           <div class="hero__content">
             <p class="eyebrow">Full-Stack Developer</p>
-
-            <h1 id="identity-heading" class="hero__title">
-              Hi, I&rsquo;m Mahmoud.
-            </h1>
-
+            <h1 id="identity-heading" class="hero__title">Hi, I&rsquo;m Mahmoud.</h1>
             <p class="hero__lead">
-              I build robust MERN stack applications — like my Restaurant Menu
-              System and Learning Management System — with a focus on clean
-              code, readable interfaces, and strong fundamentals.
+              I build robust MERN stack applications — like my Restaurant Menu System and Learning Management System — with a focus on clean code, readable interfaces, and strong fundamentals.
             </p>
-
             <div class="hero__actions">
               <a class="btn btn--primary" href="#projects">View Projects</a>
               <a class="btn btn--ghost" href="#contact">Get in Touch</a>
@@ -90,19 +71,15 @@
       </div>
     </section>
 
-    <!-- Technical Skills -->
     <section id="skills" class="section section--skills" aria-labelledby="skills-heading">
       <div class="container">
         <header class="section__header">
-          <!-- <p class="eyebrow">What I Work With</p> -->
           <h2 id="skills-heading" class="section__title">Technical Skills</h2>
         </header>
 
         <div class="skills-grid">
           <article class="skill-group" aria-labelledby="skill-frontend-title">
-            <h3 id="skill-frontend-title" class="skill-group__title">
-              Frontend
-            </h3>
+            <h3 id="skill-frontend-title" class="skill-group__title">Frontend</h3>
             <ul class="skill-list" aria-label="Frontend technologies">
               <li class="skill-chip">JavaScript (ES6+)</li>
               <li class="skill-chip">TypeScript</li>
@@ -114,9 +91,7 @@
           </article>
 
           <article class="skill-group" aria-labelledby="skill-backend-title">
-            <h3 id="skill-backend-title" class="skill-group__title">
-              Backend &amp; Database
-            </h3>
+            <h3 id="skill-backend-title" class="skill-group__title">Backend &amp; Database</h3>
             <ul class="skill-list" aria-label="Backend and database technologies">
               <li class="skill-chip">Node.js</li>
               <li class="skill-chip">Express.js</li>
@@ -125,9 +100,7 @@
           </article>
 
           <article class="skill-group" aria-labelledby="skill-principles-title">
-            <h3 id="skill-principles-title" class="skill-group__title">
-              Software Engineering
-            </h3>
+            <h3 id="skill-principles-title" class="skill-group__title">Software Engineering</h3>
             <ul class="skill-list" aria-label="Software engineering principles">
               <li class="skill-chip">Object-Oriented Programming (OOP)</li>
               <li class="skill-chip">Data Structures &amp; Algorithms</li>
@@ -138,11 +111,9 @@
       </div>
     </section>
 
-    <!-- Featured Projects -->
     <section id="projects" class="section section--projects" aria-labelledby="projects-heading">
       <div class="container">
         <header class="section__header">
-          <!-- <p class="eyebrow">Selected Work</p> -->
           <h2 id="projects-heading" class="section__title">Core Projects</h2>
         </header>
 
@@ -152,27 +123,18 @@
               <span class="project-card__tag">MERN Stack</span>
               <span class="project-card__tag">Multi-Interface</span>
             </div>
-
-            <h3 id="project-restaurant-title" class="project-card__title">
-              Restaurant Menu System
-            </h3>
-
+            <h3 id="project-restaurant-title" class="project-card__title">Restaurant Menu System</h3>
             <p class="project-card__description">
-              A full-stack MERN app with separate interfaces for owners,
-              customers, and order management — each role gets what they need
-              without clutter.
+              A full-stack MERN app with separate interfaces for owners, customers, and order management — each role gets what they need without clutter.
             </p>
-
             <ul class="project-card__features" aria-label="Restaurant system highlights">
               <li>Owner dashboard for menus and pricing</li>
               <li>Customer view for browsing and ordering</li>
               <li>Order management for staff</li>
             </ul>
-
             <footer class="project-card__footer">
               <a class="project-card__link" href="#" aria-disabled="true">
-                Case Study
-                <span class="visually-hidden"> — Restaurant Menu System</span>
+                Case Study <span class="visually-hidden"> — Restaurant Menu System</span>
               </a>
             </footer>
           </article>
@@ -182,27 +144,18 @@
               <span class="project-card__tag">MERN Stack</span>
               <span class="project-card__tag">Database Design</span>
             </div>
-
-            <h3 id="project-lms-title" class="project-card__title">
-              Learning Management System
-            </h3>
-
+            <h3 id="project-lms-title" class="project-card__title">Learning Management System</h3>
             <p class="project-card__description">
-              An LMS built for teaching environments — managing students,
-              instructors, courses, and content with a clear MongoDB data
-              structure.
+              An LMS built for teaching environments — managing students, instructors, courses, and content with a clear MongoDB data structure.
             </p>
-
             <ul class="project-card__features" aria-label="LMS highlights">
               <li>Course and lesson organization</li>
               <li>Student enrollment and progress</li>
               <li>Instructor content management</li>
             </ul>
-
             <footer class="project-card__footer">
               <a class="project-card__link" href="#" aria-disabled="true">
-                Case Study
-                <span class="visually-hidden"> — Learning Management System</span>
+                Case Study <span class="visually-hidden"> — Learning Management System</span>
               </a>
             </footer>
           </article>
@@ -210,10 +163,9 @@
       </div>
     </section>
 
-    <!-- Algorithms -->
     <section id="algorithms" class="algo-section">
       <div class="container">
-        <h2 class="section-title">Algorithms & Performance Showcase</h2>
+        <h2 class="section-title">Algorithms &amp; Performance Showcase</h2>
         <p class="section-subtitle">Live comparison of code optimization and algorithmic efficiency</p>
 
         <div class="algo-wrapper">
@@ -235,31 +187,26 @@
           <div class="algo-details">
             <div class="complexity-badge" id="complexity-badge">Time Complexity: O(n²)</div>
             <p id="complexity-text" class="complexity-desc">
-              The traditional sorting approach. It is highly educational for understanding data flow, but scales poorly
-              with large datasets due to intensive nested iterations.
+              The traditional sorting approach. It is highly educational for understanding data flow, but scales poorly with large datasets due to intensive nested iterations.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
     <section class="contact-section" id="contact">
       <div class="container">
-
         <span class="section-tag">CONTACT</span>
         <h2 class="section-title">Let’s connect.</h2>
         <p class="section-subtitle">
-          As an aspiring Junior Full-stack Developer, I am open to Full-time roles, freelance work, and remote
-          collaborations.
+          As an aspiring Junior Full-stack Developer, I am open to Full-time roles, freelance work, and remote collaborations.
         </p>
-
         <button id="open-form-btn" class="btn-main">Send Email</button>
       </div>
 
       <div id="contact-modal" class="modal-overlay hidden">
         <div class="modal-card">
-          <button id="close-form-btn" class="btn-close">&times;</button>
+          <button id="close-form-btn" class="btn-close" aria-label="Close modal">&times;</button>
           <h3 class="modal-title">Send a Message</h3>
 
           <form id="contact-form" novalidate>
@@ -293,30 +240,21 @@
     </section>
   </main>
 
-  <!-- Main Application Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container site-footer__inner">
-      <!-- Copyright text display with dynamic year binding -->
       <p class="site-footer__copy">
         &copy; <span id="year"></span> Mahmoud Zakaria. All rights reserved.
       </p>
 
-      <!-- Social connect links wrapper utilizing BEM methodology -->
       <div class="site-footer__socials">
-        <!-- 1. GitHub: Replace 'MahmoudZakaria' with your actual GitHub username -->
-        <a href="https://github.com/mz2862001-ux
-      " target="_blank" rel="noopener noreferrer" class="site-footer__link site-footer__link--github"
-          aria-label="GitHub">
+        <a href="https://github.com/mz2862001-ux" target="_blank" rel="noopener noreferrer" class="site-footer__link site-footer__link--github" aria-label="GitHub">
           <i class="fa-brands fa-github"></i>
         </a>
 
-        <!-- 2. LinkedIn: Replace the URL with your exact LinkedIn profile link -->
-        <a href="https://www.linkedin.com/in/mahmoud-zakaria-2644982ab/" target="_blank" rel="noopener noreferrer"
-          class="site-footer__link site-footer__link--linkedin" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/in/mahmoud-zakaria-2644982ab/" target="_blank" rel="noopener noreferrer" class="site-footer__link site-footer__link--linkedin" aria-label="LinkedIn">
           <i class="fa-brands fa-linkedin"></i>
         </a>
 
-        <!-- 3. Gmail: This is already perfectly configured to open an email draft to you -->
         <a href="mailto:mahmoudzakaria@gmail.com" class="site-footer__link site-footer__link--gmail" aria-label="Email">
           <i class="fa-brands fa-google"></i>
         </a>
@@ -324,7 +262,6 @@
     </div>
   </footer>
 
-  <!-- Compiled from TypeScript: src/scripts/main.ts -->
   <script src="dist/scripts/main.js" type="module" defer></script>
 </body>
 

@@ -1,6 +1,11 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
+/**
+ * Navigation Component Layout & Interactions
+ * Manages responsive link positioning and premium underline micro-interactions.
+ */
+
 .site-nav {
   justify-self: end;
 }
@@ -18,7 +23,10 @@
   padding: 0.5rem 0;
   font-size: 0.9375rem;
   color: $color-text-muted;
-  transition: color 0.2s ease;
+  position: relative; /* Established relative context for the absolute underline positioning */
+  
+  /* Synchronized color and state transitions for unified timing */
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
   &:focus-visible {
@@ -28,7 +36,33 @@
   &:focus-visible {
     @include focus-ring;
   }
+
+  /* 🌟 PREMIUM UNDERLINE WAVE ANIMATION */
+  /* Invisible core layer centered horizontally underneath the link text */
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 2px; /* Perfect spatial alignment just underneath the text bounds */
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: $color-accent;
+    /* Smooth outward expansion using dynamic Easing-in-out curve */
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Expands the underline dynamically from the center outwards on interaction */
+  &:hover::after,
+  &:focus-visible::after {
+    width: 100%;
+    left: 0;
+  }
 }
+
+/* ==========================================================================
+   Responsive Adaptations (Media Queries)
+   ========================================================================== */
 
 @media (max-width: $breakpoint-md) {
   .site-nav {
