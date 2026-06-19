@@ -1,0 +1,269 @@
+@use "../abstracts/variables" as *;
+
+/**
+ * AI Chatbot Widget Styles
+ * Implements a fixed floating interaction layer with fluid theme transitions,
+ * explicit accessibility spacing, and responsive interface constraints.
+ */
+
+.portfolio-bot {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 999;
+    font-family: inherit;
+
+    /* 🔘 Floating Action Button (Toggle) */
+    &__toggle {
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 50%;
+        background-color: var(--color-accent);
+        /* Inherits live dynamic accent token */
+        color: #ffffff;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 4px 16px rgba(99, 102, 241, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.35rem;
+
+        /* Smooth elastic physics transformation on user interaction */
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+            background-color 0.3s ease;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    /* 🪟 Interactive Chat Window Frame */
+    &__window {
+        position: absolute;
+        bottom: 4.5rem;
+        right: 0;
+        width: 360px;
+        max-width: calc(100vw - 4rem);
+        height: 480px;
+        background-color: var(--color-surface);
+        /* Automatically adapts during active theme swaps */
+        border: 1px solid var(--color-border);
+        border-radius: 1rem;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+
+        /* Handles entry and exit animations seamlessly */
+        transition: opacity 0.3s ease,
+            transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+        /* State modifier to safely hide and isolate the component layer */
+        &.hidden {
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+            pointer-events: none;
+        }
+    }
+
+    /* 🏷️ Top Context Bar (Header) */
+    &__header {
+        background-color: var(--color-surface);
+        border-bottom: 1px solid var(--color-border);
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    /* Online indicator status node */
+    &__status-dot {
+        width: 0.5rem;
+        height: 0.5rem;
+        background-color: #10b981;
+        /* Standard enterprise success/online green */
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+    &__title {
+        font-size: 0.9375rem;
+        font-weight: 600;
+        color: var(--color-text);
+        margin: 0;
+    }
+
+    &__close {
+        background: transparent;
+        border: none;
+        color: var(--color-text-muted);
+        font-size: 1.25rem;
+        cursor: pointer;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: var(--color-text);
+        }
+    }
+
+    /* 💬 Message Log Viewing Vault (Scrollable Node) */
+    &__messages {
+        flex: 1;
+        padding: 1rem;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        background-color: rgba(0, 0, 0, 0.01);
+    }
+
+    /* ✉️ Dynamic Message Bubble Formatting */
+    &__msg {
+        max-width: 80%;
+        padding: 0.65rem 0.85rem;
+        border-radius: 0.75rem;
+        font-size: 0.875rem;
+        line-height: 1.4;
+        word-wrap: break-word;
+
+        /* Message structures incoming from the AI Core */
+        &--incoming {
+            background-color: var(--color-border);
+            color: var(--color-text);
+            align-self: flex-start;
+            border-top-left-radius: 0.25rem;
+        }
+
+        /* Message structures outgoing from the Client/User */
+        &--outgoing {
+            background-color: var(--color-accent);
+            color: #ffffff;
+            align-self: flex-end;
+            border-top-right-radius: 0.25rem;
+        }
+    }
+
+    /* ⌨️ User Submission Input Station */
+    &__input-area {
+        padding: 0.75rem 1rem;
+        border-top: 1px solid var(--color-border);
+        display: flex;
+        gap: 0.5rem;
+        background-color: var(--color-surface);
+
+        input {
+            flex: 1;
+            background: transparent;
+            border: 1px solid var(--color-border);
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--color-text);
+            transition: border-color 0.2s ease, outline 0.2s ease;
+
+            &:focus {
+                outline: none;
+                border-color: var(--color-accent);
+            }
+        }
+    }
+
+    &__send-btn {
+        background: transparent;
+        border: none;
+        color: var(--color-accent);
+        font-size: 1rem;
+        cursor: pointer;
+        padding: 0 0.25rem;
+        transition: transform 0.2s ease;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.typing-indicator-bubble {
+    font-style: italic;
+    color: var(--color-text-muted) !important;
+    background-color: var(--color-border) !important;
+    opacity: 0.7;
+    animation: pulse 1.2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* 💡 Quick Reply Suggestion Wrapper */
+.portfolio-bot__suggestions {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    overflow-x: auto;
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+
+    /* Hide standard scrollbar for a ultra-clean minimalist look */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+/* 🔘 Modern Capsule Suggestion Buttons */
+.bot-suggest-btn {
+    background-color: var(--color-border);
+    color: var(--color-text);
+    border: 1px solid transparent;
+    padding: 0.4rem 0.8rem;
+    border-radius: 2rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background-color: transparent;
+        border-color: var(--color-accent);
+        color: var(--color-accent);
+        transform: translateY(-1px);
+    }
+}
+
+/* 📱 Responsive Screen Adapters (Viewports below small-breakpoint threshold) */
+/* 📱 Responsive Screen Adapters (Viewports below small-breakpoint threshold) */
+@media (max-width: 30rem) {
+
+    /* 30rem equals 480px, maximizing mobile layout alignment */
+    .portfolio-bot {
+        bottom: 1rem;
+        right: 1rem;
+
+        &__window {
+            bottom: 4rem;
+            width: calc(100vw - 2rem);
+            height: 400px;
+        }
+    }
+}
