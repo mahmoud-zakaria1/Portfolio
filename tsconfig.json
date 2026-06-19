@@ -9,7 +9,14 @@
     "noEmitOnError": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+
+    /* ⚡ Production Performance & Code Optimization ⚡ */
+    "removeComments": true,                     
+    "sourceMap": false,                          
+    "noUnusedLocals": true,                      
+    "noUnusedParameters": true,                  
+    "allowUnreachableCode": false                
   },
   "include": ["src/scripts/**/*.ts"]
 }
