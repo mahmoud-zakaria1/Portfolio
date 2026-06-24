@@ -1,4 +1,34 @@
+# Dependencies
 node_modules/
-dist/styles/main.css
-dist/styles/main.css.map
-dist/scripts/main.js
+jspm_packages/
+
+# Production outputs
+# Optional: Uncomment if Vercel builds directly from source and you don't want to track compiled output
+# dist/
+
+# Debugging logs and source maps
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.css.map
+*.js.map
+
+# Environment variables (CRITICAL FOR FULL-STACK SECURITY)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Editor and IDE configurations
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# OS generated files
+.DS_Store
+Thumbs.db
